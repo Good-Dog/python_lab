@@ -1,4 +1,4 @@
 minutes = int(input())
-howmuch = minutes // 60
-seconds = minutes - (howmuch * 60)
-print(f"{howmuch}:{seconds}")
+hours = minutes // 60
+new_minutes = minutes - (hours * 60)
+print(f"{hours}:{new_minutes:02d}")
