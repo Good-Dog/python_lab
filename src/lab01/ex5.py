@@ -5,5 +5,5 @@ for i in a:
     if i[0].isupper():
         ini = ini + i[0] 
 ini = ini + '.'
-print(ini)
-print(len('+'.join(a)))
+print(f'Инициалы: {ini}')
+print(f'Длина: {len('+'.join(a))}')
