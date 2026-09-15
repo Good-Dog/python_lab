@@ -1,7 +1,7 @@
 number = int(input('in_1: '))
 r = 0
 o = 0
-k = 0
+k = 1
 for i in range(number):
     k = k + 1
     name = input(f'in_{k}: ').split()
