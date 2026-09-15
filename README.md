@@ -9,3 +9,5 @@
 <img width="1448" height="126" alt="EX4" src="https://github.com/user-attachments/assets/8e494965-3522-4e83-8038-949cbe7d19a3" />
 Задание 5
 <img width="1452" height="152" alt="EX5" src="https://github.com/user-attachments/assets/7665cbd2-0e99-4194-bde0-49869f39bbe7" />
+Задание 6
+<img width="1412" height="210" alt="EX6" src="https://github.com/user-attachments/assets/0b954d10-dfbe-4ac6-ac6d-ae56e7b2d451" />
