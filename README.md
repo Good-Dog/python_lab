@@ -1,3 +1,4 @@
+<h1>Лабораторная работа 1</h1>
 Задание 1
 <img width="1446" height="318" alt="EX1" src="https://github.com/user-attachments/assets/7958f0e6-c0b6-42d7-b3f1-e86cd611930d" />
 Задание 2
