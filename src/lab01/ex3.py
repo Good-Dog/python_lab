@@ -1,4 +1,4 @@
-price = float(input())
+price = float(input("asdfghjklkjhgfd"))
 discount = float(input())
 vat = float(input())
 base = price * (1 - discount/100)
