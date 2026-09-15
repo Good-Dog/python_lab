@@ -1,4 +1,4 @@
-name = input()
+name = input('ФИО: ')
 ini = ''
 a = name.split()
 for i in ''.join(a):
@@ -6,4 +6,4 @@ for i in ''.join(a):
         ini = ini + i
 ini = ini + '.'
 print(f'Инициалы: {ini}')
-print(f'Длина: {len('+'.join(a))}')
+print(f'Длина (символов): {len('+'.join(a))}')
