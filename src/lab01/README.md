@@ -7,7 +7,7 @@
 <img width="1442" height="752" alt="EX2" src="https://github.com/user-attachments/assets/5b05cc7c-ad83-44ea-af78-20513e824415" />
 <h2>Задание 3<h2>
   Позволяет узнать сколько будет выплата с учетом скидки и НДС
-<img width="1436" height="758" alt="EX3" src="https://github.com/user-attachments/assets/bebafc62-5ca7-417c-87cd-40401b897be5" />
+<img width="1432" height="752" alt="EX3" src="https://github.com/user-attachments/assets/d730eb4e-6801-46e0-abb4-e4565abb1dee" />
 <h2>Задание 4<h2>
   Минуты в часы и минуты
 <img width="1428" height="746" alt="EX4" src="https://github.com/user-attachments/assets/857374b5-88f2-42a4-9358-da550946220b" />
