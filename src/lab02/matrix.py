@@ -1,0 +1,59 @@
+def transpose(mat: list[list[float | int]]):
+    if mat == []:
+        return []
+    
+    lines_len = len(mat[0])
+    if any(len(line) != lines_len for line in mat):
+        return "ValueError"
+        
+    result = []
+    for col_index in range(lines_len):
+        new_row = []
+        for row_index in range(len(mat)):
+            new_row.append(mat[row_index][col_index])
+        result.append(new_row)
+    return result
+
+
+def row_sums(mat: list[list[float | int]]):
+    if mat == []:
+        return []
+        
+    lines_len = len(mat[0])
+    if any(len(line) != lines_len for line in mat):
+        return "ValueError"
+        
+    return [sum(row) for row in mat]
+
+
+def col_sums(mat: list[list[float | int]]):
+    if mat == []:
+        return []
+        
+    lines_len = len(mat[0])
+    if any(len(line) != lines_len for line in mat):
+        return "ValueError"
+        
+    sums = [0] * lines_len
+    for i in mat:
+        for j in range(lines_len):
+            sums[j] += i[j]
+    return sums
+print('transpose')
+print('[[1, 2, 3]] ->', transpose([[1, 2, 3]]))
+print('[[1], [2], [3]] ->', transpose([[1], [2], [3]]))
+print('[[1, 2], [3, 4]] ->', transpose([[1, 2], [3, 4]]))
+print('[] ->', transpose([]))
+print('[[1, 2], [3]] ->', transpose([[1, 2], [3]]))
+print('')
+print('row_sums')
+print('[[1, 2, 3], [4, 5, 6]] ->', row_sums([[1, 2, 3], [4, 5, 6]]))
+print('[[-1, 1], [10, -10]] ->', row_sums([[-1, 1], [10, -10]]))
+print('[[0, 0], [0, 0]] ->', row_sums([[0, 0], [0, 0]]))
+print('[[1, 2], [3]] ->', row_sums([[1, 2], [3]]))
+print('')
+print('col_sums')
+print('[[1, 2, 3], [4, 5, 6]] ->', col_sums([[1, 2, 3], [4, 5, 6]]))
+print('[[-1, 1], [10, -10]] ->', col_sums([[-1, 1], [10, -10]]))
+print('[[0, 0], [0, 0]] ->', col_sums([[0, 0], [0, 0]]))
+print('[[1, 2], [3]] ->', col_sums([[1, 2], [3]]))
