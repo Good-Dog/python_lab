@@ -1,5 +1,6 @@
 def format_record(rec: tuple[str, str, float]):
-
+    if len(rec) != 3:
+        raise TypeError('Значений должно быть 3')
     fio, group, gpa = rec
     if len(group) == 0:
         raise TypeError('Неправильная группа')
