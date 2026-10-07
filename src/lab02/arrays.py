@@ -11,15 +11,15 @@ def min_max(nums: list[float | int]) -> tuple[float | int, float | int]:
     return minn, maxx
 
 def unique_sorted(nums: list[float | int]) -> list[float | int]:
-    l = []
+    row = []
     for num in nums:
-        if num not in l:
-            l.append(num)
-    for i in range(len(l)):
-        for j in range(0, len(l) - i - 1):
-            if l[j] > l[j+1]:
-                l[j], l[j+1] = l[j+1], l[j]
-    return l
+        if num not in row:
+            row.append(num)
+    for i in range(len(row)):
+        for j in range(0, len(row) - i - 1):
+            if row[j] > row[j+1]:
+                row[j], row[j+1] = row[j+1], row[j]
+    return row
 
 def flatten(mat: list[list | tuple]) -> list:
     res = []
