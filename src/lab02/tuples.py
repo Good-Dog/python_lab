@@ -1,4 +1,4 @@
-def format_record(rec: tuple[str, str, float]):
+def format_record(rec: tuple[str, str, float]) -> str:
     if len(rec) != 3:
         raise TypeError('Значений должно быть 3')
     fio, group, gpa = rec

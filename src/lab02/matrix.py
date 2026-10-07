@@ -1,4 +1,4 @@
-def transpose(mat: list[list[float | int]]):
+def transpose(mat: list[list[float | int]]) -> list[list]:
     if mat == []:
         return []
     
@@ -6,16 +6,16 @@ def transpose(mat: list[list[float | int]]):
     if any(len(line) != lines_len for line in mat):
         return "ValueError"
         
-    result = []
-    for col_index in range(lines_len):
-        new_row = []
-        for row_index in range(len(mat)):
-            new_row.append(mat[row_index][col_index])
-        result.append(new_row)
-    return result
+    res = []
+    for i_index in range(lines_len):
+        row = []
+        for j_index in range(len(mat)):
+            row.append(mat[j_index][i_index])
+        res.append(row)
+    return res
 
 
-def row_sums(mat: list[list[float | int]]):
+def row_sums(mat: list[list[float | int]]) -> list[float]:
     if mat == []:
         return []
         
@@ -26,7 +26,7 @@ def row_sums(mat: list[list[float | int]]):
     return [sum(row) for row in mat]
 
 
-def col_sums(mat: list[list[float | int]]):
+def col_sums(mat: list[list[float | int]]) -> list[float]:
     if mat == []:
         return []
         
