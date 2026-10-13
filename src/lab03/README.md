@@ -1,9 +1,9 @@
 <h1>Лабораторная работа 3</h1>
-<h2>Задание text<h2>
+<h2>Задание A, text<h2>
   Функции normalize, tokenize, count_freq, top_n
 <img width="2100" height="848" alt="text" src="https://github.com/user-attachments/assets/dc664b88-0bd5-4a54-b819-ddacc3f926d1" />
 
-<h2>Задание text_stats<h2>
+<h2>Задание B, text_stats<h2>
   Варианта с таблицей
 <img width="2136" height="474" alt="text_stats2" src="https://github.com/user-attachments/assets/70e2821c-1691-4359-918c-632dcbaeb701" />
   
