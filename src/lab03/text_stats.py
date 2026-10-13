@@ -1,11 +1,11 @@
 from text import normalize, tokenize, count_freq, top_n
 
-text=input()
+text = input()
 FLAg = False
 
 norm = normalize(text)
 token = tokenize(norm)
-cnt_freq=count_freq(token)
+cnt_freq = count_freq(token)
 top = top_n(cnt_freq)
 
 print(f'Всего слов: {len(token)}')
