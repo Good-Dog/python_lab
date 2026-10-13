@@ -1,6 +1,6 @@
 <h1>Лабораторная работа 3</h1>
 <h2>Задание text<h2>
-  Функции min_max, unique_sorted, flatten
+  Функции normalize, tokenize, count_freq, top_n
 <img width="2100" height="848" alt="text" src="https://github.com/user-attachments/assets/dc664b88-0bd5-4a54-b819-ddacc3f926d1" />
 
 <h2>Задание text_stats<h2>
