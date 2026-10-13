@@ -1,7 +1,7 @@
 from text import normalize, tokenize, count_freq, top_n
 
 text=input()
-FLAg = True 
+FLAg = False
 
 norm = normalize(text)
 token = tokenize(norm)
