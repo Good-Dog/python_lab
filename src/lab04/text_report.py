@@ -6,11 +6,10 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '.
 
 from src.lib.text import normalize, tokenize, count_freq, top_n
 from src.lab04.io_txt_csv import read_text, write_csv
-text_input = "data/lab04/input.txt"
 
 def text_report():
     try:
-        text = read_text(text_input, encoding="utf-8")
+        text = read_text("data/lab04/input.txt", encoding="utf-8")
     except FileNotFoundError:
         print("файл не найден")
         sys.exit(1)
