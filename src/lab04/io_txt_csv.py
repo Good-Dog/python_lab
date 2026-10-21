@@ -7,7 +7,7 @@ def read_text(path: str | Path, encoding: str = "utf-8") -> str:
     return p.read_text(encoding=encoding)
 
 def ensure_parent_dir(path: str | Path) -> None:
-    p=Path(path)
+    p = Path(path)
     p.parent.mkdir(parents=True, exist_ok=True)
 
 def write_csv(rows: list[tuple | list], path: str | Path, header: tuple[str, ...] | None = None) -> None:
