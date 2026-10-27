@@ -16,18 +16,18 @@ def json_to_csv(json_path: str, csv_path: str) -> None:
     if not data or type(data) is not list or not all(type(item) is dict for item in data):
         raise ValueError("Пустой или неверный JSON")
 
-    colums = []
+    c = []
     for item in data:
         for key in item:
-            if key not in colums:
-                colums.append(key)
+            if key not in c:
+                c.append(key)
 
     with open(csv_path, 'w', newline='', encoding='utf-8') as f:
         writer = csv.writer(f)
-        writer.writerow(colums)
+        writer.writerow(c)
         for item in data:
             values = []
-            for i in colums:
+            for i in c:
                 values.append(item.get(i, ''))
             writer.writerow(values)
 
