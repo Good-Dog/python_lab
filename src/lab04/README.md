@@ -18,10 +18,6 @@ def ensure_parent_dir(path: str | Path) -> None:
 ### write_csv
 Функция принимает список из строк таблицы, путь, где создаст csv, и заголовок таблицы; проверяет прямоугольность таблицы; перезаписывает строки в csv
 ```python
-def ensure_parent_dir(path: str | Path) -> None:
-    p = Path(path)
-    p.parent.mkdir(parents=True, exist_ok=True)
-
 def write_csv(rows: list[tuple | list], path: str | Path, header: tuple[str, ...] | None = None) -> None:
     if rows:
         normal = len(rows[0])
@@ -42,7 +38,29 @@ def write_csv(rows: list[tuple | list], path: str | Path, header: tuple[str, ...
 ### text_report
 Функция читает текст из файла `src/data/lab04/input.txt`; с помощью функций `normalize, tokenize, count_freq, top_n` из ЛР3 обрабатывает текст и выводит в консоль количество всех слов, уникальных слов и топ-5; создает таблицу в csv с колонками `word,count` со всеми словами текста 
 ```python
+def text_report():
+    try:
+        text = read_text("data/lab04/input.txt", encoding="utf-8")
+    except FileNotFoundError:
+        print("файл не найден")
+        sys.exit(1)
+    except UnicodeDecodeError:
+        print("неверная кодировка")
+        sys.exit(1)
 
+    norm = normalize(text)
+    token = tokenize(norm)
+    cnt_freq = count_freq(token)
+    top = top_n(cnt_freq)
+
+    print(f'Всего слов: {len(token)}')
+    print(f'Уникальных слов: {len(cnt_freq)}')
+    print('Топ-5:')
+    for i in top:
+        print(f'{i[0]}: {i[1]}')
+    
+    top = sorted(cnt_freq.items(), key=lambda x: (-x[1], x[0]))
+    write_csv(top, "data/lab04/report.csv", header=("word","count"))
 ```
 # ПРИМЕРЫ ЗАПУСКОВ
 В обоих примерах input.txt содержит в себе строку "Привет, мир! Привет!!!"
