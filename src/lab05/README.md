@@ -133,14 +133,14 @@ def csv_to_xlsx(csv_path: str, xlsx_path: str) -> None:
 
 ##ПРИМЕРЫ
 
-###json_to_csv
+json_to_csv
 
 <img width="730" height="346" alt="people_from_json" src="https://github.com/user-attachments/assets/ddd73f6a-8c96-40df-8229-660306c2bdc5" />
 
-###csv_to_json
+csv_to_json
 
 <img width="956" height="872" alt="people_from_csv" src="https://github.com/user-attachments/assets/948ba1de-3c35-4547-ba37-38e7e512e992" />
 
-###csv_to_xlsx
+csv_to_xlsx
 
 <img width="938" height="1218" alt="people_in_xlsx" src="https://github.com/user-attachments/assets/04013d2e-96eb-497c-8c31-d32db617a18d" />
