@@ -15,9 +15,11 @@ Cоздает родительские директории, если их не�
 
 # ПРИМЕРЫ ЗАПУСКОВ
 Задача A
+
 <img width="390" height="146" alt="TEST_A_io_txt_csv_csv" src="https://github.com/user-attachments/assets/ecb1830e-2dd3-42a6-b7fb-738311034ef9" />
 <img width="1894" height="144" alt="TEST_A_io_txt_csv" src="https://github.com/user-attachments/assets/9177cce5-15d7-4a9d-9780-2b953fa413f9" />
 
 Задача B
+
 <img width="418" height="260" alt="TEST_A_text_report_csv" src="https://github.com/user-attachments/assets/2c9ff5ad-88a3-4144-ad26-585757f8ac09" />
 <img width="1908" height="336" alt="TEST_A_text_report" src="https://github.com/user-attachments/assets/ac2d2d65-2582-42f3-8150-3a3187ee1c4e" />
