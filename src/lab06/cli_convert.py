@@ -2,7 +2,6 @@ import argparse
 import sys
 from pathlib import Path
 
-# Подключаем корень проекта, чтобы импорты работали
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
 from src.lab05.json_to_csv import json_to_csv, csv_to_json
