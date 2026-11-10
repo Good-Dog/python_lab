@@ -38,5 +38,5 @@ def csv_to_xlsx(csv_path: str, xlsx_path: str) -> None:
     wb.save(xlsx_path)
 
 if __name__ == '__main__':
-    csv_to_xlsx('data/lab05/samples/people.csv', 'data/lab05/out/people.xlsx')
-    csv_to_xlsx('data/lab05/samples/cities.csv', 'data/lab05/out/cities.xlsx')
+    csv_to_xlsx('data/samples/people.csv', 'data/out/people.xlsx')
+    csv_to_xlsx('data/samples/cities.csv', 'data/out/cities.xlsx')
