@@ -2,49 +2,58 @@ import argparse
 import sys
 from pathlib import Path
 
+# Подключаем корень проекта, чтобы импорты работали
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
-from src.lib.text import normalize, tokenize, count_freq, top_n
+from src.lab05.json_to_csv import json_to_csv, csv_to_json
+from src.lab05.csv_to_xlsx import csv_to_xlsx
 
 def main():
-    parser = argparse.ArgumentParser(description="CLI-утилиты для текста")
+    # Создаем главный парсер
+    parser = argparse.ArgumentParser(description="Конвертеры данных (JSON, CSV, XLSX)")
+    
+    # Создаем подкоманды
     subparsers = parser.add_subparsers(dest="command", required=True, help="Доступные команды")
-    parser_cat = subparsers.add_parser("cat", help="Вывести содержимое файла")
-    parser_cat.add_argument("--input", required=True, help="Путь к файлу")
-    parser_cat.add_argument("-n", action="store_true", help="Нумеровать строки")
-    parser_stats = subparsers.add_parser("stats", help="Анализ частот слов в тексте")
-    parser_stats.add_argument("--input", required=True, help="Путь к файлу")
-    parser_stats.add_argument("--top", type=int, default=5, help="Сколько топ-слов вывести (по умолчанию 5)")
 
+    # 1. Команда json2csv
+    parser_j2c = subparsers.add_parser("json2csv", help="Конвертировать JSON в CSV")
+    parser_j2c.add_argument("--in", dest="input", required=True, help="Путь к входному JSON")
+    parser_j2c.add_argument("--out", dest="output", required=True, help="Путь к выходному CSV")
+
+    # 2. Команда csv2json
+    parser_c2j = subparsers.add_parser("csv2json", help="Конвертировать CSV в JSON")
+    parser_c2j.add_argument("--in", dest="input", required=True, help="Путь к входному CSV")
+    parser_c2j.add_argument("--out", dest="output", required=True, help="Путь к выходному JSON")
+
+    # 3. Команда csv2xlsx
+    parser_c2x = subparsers.add_parser("csv2xlsx", help="Конвертировать CSV в XLSX")
+    parser_c2x.add_argument("--in", dest="input", required=True, help="Путь к входному CSV")
+    parser_c2x.add_argument("--out", dest="output", required=True, help="Путь к выходному XLSX")
+
+    # Читаем аргументы
     args = parser.parse_args()
 
-    if args.command == "cat":
-        try:
-            with open(args.input, "r", encoding="utf-8") as f:
-                if args.n:
-                    for i, line in enumerate(f, start=1):
-                        print(f"{i:4d} | {line}", end="")
-                else:
-                    print(f.read(), end="")
-        except FileNotFoundError:
-            parser.error(f"Файл не найден: {args.input}")
-
-    elif args.command == "stats":
-        try:
-            with open(args.input, "r", encoding="utf-8") as f:
-                text = f.read()
-            norm = normalize(text)
-            token = tokenize(norm)
-            cnt_freq = count_freq(token)
-            top = top_n(cnt_freq, n=args.top)
-            print(f"Всего слов: {len(token)}")
-            print(f"Уникальных слов: {len(cnt_freq)}")
-            print(f"Топ-{args.top}:")
-            for word, cnt in top:
-                print(f"  {word}: {cnt}")
-
-        except FileNotFoundError:
-            parser.error(f"Файл не найден: {args.input}")
+    # Вызываем нужную функцию в зависимости от команды
+    try:
+        if args.command == "json2csv":
+            json_to_csv(args.input, args.output)
+            print(f"Успех: {args.input} -> {args.output}")
+            
+        elif args.command == "csv2json":
+            csv_to_json(args.input, args.output)
+            print(f"Успех: {args.input} -> {args.output}")
+            
+        elif args.command == "csv2xlsx":
+            csv_to_xlsx(args.input, args.output)
+            print(f"Успех: {args.input} -> {args.output}")
+            
+    except FileNotFoundError:
+        # Выводим понятную ошибку через argparse
+        parser.error(f"Файл не найден: {args.input}")
+    except ValueError as e:
+        parser.error(f"Ошибка данных: {e}")
+    except Exception as e:
+        parser.error(f"Произошла ошибка: {e}")
 
 if __name__ == "__main__":
     main()
