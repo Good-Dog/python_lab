@@ -56,7 +56,7 @@ def check_two_sum(trials=100) -> None:
             assert res_brute in expected, f"Поиск индексов двумя циклами элементов, образующих сумму не выполнен верно: {nums}, {target}"
             assert res_fast in expected, f"Поиск индексов словарем элементов, образующих сумму не выполнен верно: {nums}, {target}"
         else:
-            assert res_brute  is None
+            assert res_brute is None
             assert res_fast is None
     return trials
         
